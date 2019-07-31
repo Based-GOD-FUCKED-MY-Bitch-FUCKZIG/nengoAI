@@ -170,7 +170,6 @@ class SPA(nengo.Network):
 
         This will create a new default Vocabulary if one doesn't exist.
         """
-
         # If seed is set, create rng based off that seed.
         # Otherwise, just use the default NumPy rng.
         rng = None if self.seed is None else np.random.RandomState(self.seed)

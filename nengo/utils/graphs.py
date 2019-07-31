@@ -78,7 +78,6 @@ class BidirectionalDAG:
         merged_vertex
             The vertex that replaces *vertices*.
         """
-
         forward_edges = set()
         for v in vertices:
             forward_edges.update(self.forward[v])
@@ -101,7 +100,7 @@ class BidirectionalDAG:
 
 
 def toposort(edges):
-    """Topological sort algorithm by Kahn[1]
+    """Topological sort algorithm by Kahn [1]_.
 
     Complexity is O(nodes + vertices).
 
@@ -116,18 +115,18 @@ def toposort(edges):
 
     Example
     -------
-
     >>> toposort({1: {2, 3}, 2: {3}, 3: set()})
     [1, 2, 3]
 
     Notes
     -----
+    Closely follows the wikipedia page [2]_.
 
-    Closely follows the wikipedia page [2]
-
-    [1] Kahn, Arthur B. (1962), "Topological sorting of large networks",
-    Communications of the ACM
-    [2] https://en.wikipedia.org/wiki/Toposort#Algorithms
+    References
+    ----------
+    .. [1] Kahn, Arthur B. (1962), "Topological sorting of large networks",
+       Communications of the ACM
+    .. [2] https://en.wikipedia.org/wiki/Toposort#Algorithms
     """
     incoming_edges = reverse_edges(edges)
     incoming_edges = {k: set(val) for k, val in incoming_edges.items()}
@@ -205,7 +204,6 @@ def reverse_edges(edges):
 
     Example
     -------
-
     >>> d = {0: {1, 2}, 1: {2, 3}, 2: set(), 3: set()}
     >>> reverse_edges(d)
     {0: set(), 1: {0}, 2: {0, 1}, 3: {1}}

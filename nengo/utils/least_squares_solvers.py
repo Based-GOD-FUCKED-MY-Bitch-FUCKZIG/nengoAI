@@ -208,7 +208,6 @@ class Conjgrad(LeastSquaresSolver):
     @staticmethod
     def _conjgrad_iters(calcAx, b, x, maxiters=None, rtol=1e-6):
         """Solve a single-RHS linear system using conjugate gradient."""
-
         if maxiters is None:
             maxiters = b.shape[0]
 

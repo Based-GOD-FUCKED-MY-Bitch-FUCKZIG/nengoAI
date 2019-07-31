@@ -16,7 +16,6 @@ def enable_spa_params(model):
     model : Network
         Model to activate SPA specific parameters for.
     """
-
     for obj_type in [nengo.Node, nengo.Ensemble]:
         model.config[obj_type].set_param(
             "vocab", VocabularyParam("vocab", default=None, optional=True)

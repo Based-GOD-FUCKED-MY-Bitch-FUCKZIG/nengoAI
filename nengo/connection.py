@@ -337,7 +337,6 @@ class Connection(NengoObject):
         The source Nengo object for the connection.
     post : Ensemble or Neurons or Node or Probe
         The destination object for the connection.
-
     synapse : Synapse or None, optional
         Synapse model to use for filtering (see `~nengo.synapses.Synapse`).
         If *None*, no synapse will be used and information will be transmitted

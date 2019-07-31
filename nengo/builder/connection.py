@@ -225,7 +225,6 @@ def build_connection(model, conn):
     -----
     Sets ``model.params[conn]`` to a `.BuiltConnection` instance.
     """
-
     # Create random number generator
     rng = np.random.RandomState(model.seeds[conn])
 

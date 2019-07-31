@@ -229,7 +229,6 @@ class Vocabulary:
         If the expression returns a scalar (int or float), a scaled version
         of the identity SemanticPointer will be returned.
         """
-
         # The following line does everything.  Note that self is being
         # passed in as the locals dictionary, and thanks to the __getitem__
         # implementation, this will automatically create new semantic
@@ -419,7 +418,6 @@ class Vocabulary:
         desired angle, and then raise that to vocab_size to get the
         probability that all of them are farther away.
         """
-
         # TODO: test for numerical stability.  We are taking a number
         # slightly below 1 and raising it to a large exponent, so there's
         # lots of room for rounding errors.

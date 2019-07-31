@@ -77,7 +77,6 @@ class Progress:
 
     Examples
     --------
-
     >>> max_steps = 10
     >>> with Progress(max_steps=max_steps) as progress:
     ...     for i in range(max_steps):
@@ -741,7 +740,6 @@ class ProgressTracker:
 
     def update_loop(self):
         """Update the progress bar display (will run in a separate thread)."""
-
         while not self._closing:
             if self.sub_progress is not None and not self.sub_progress.finished:
                 self.progress_bar.update(self.sub_progress)

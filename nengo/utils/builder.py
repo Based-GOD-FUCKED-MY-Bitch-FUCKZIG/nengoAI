@@ -1,6 +1,4 @@
-"""These are helper functions that various backends may find useful for
-generating their own Builder system.
-"""
+"""Helper functions for backends generating their own Builder system."""
 
 import collections
 
@@ -26,7 +24,6 @@ def full_transform(conn, slice_pre=True, slice_post=True, allow_scalars=True):
         not using slicing, since these work fine in the reference builder.
         If false, these scalars will be turned into scaled identity matrices.
     """
-
     if not isinstance(conn.transform, nengo.Dense):
         raise ValidationError(
             "full_transform can only be applied to Dense " "transforms",
@@ -116,7 +113,7 @@ def generate_graphviz(*args, **kwargs):
 
 
 def _create_replacement_connection(c_in, c_out):
-    """Generate a new Connection to replace two through a passthrough Node"""
+    """Generate a new Connection to replace two through a passthrough Node."""
     assert c_in.post_obj is c_out.pre_obj
     assert c_in.post_obj.output is None
 
@@ -157,7 +154,7 @@ def _create_replacement_connection(c_in, c_out):
 def remove_passthrough_nodes(  # noqa: C901
     objs, connections, create_connection_fn=None
 ):
-    """Returns a version of the model without passthrough Nodes
+    """Returns a version of the model without passthrough Nodes.
 
     For some backends (such as SpiNNaker), it is useful to remove Nodes that
     have 'None' as their output.  These nodes simply sum their inputs and
@@ -224,7 +221,7 @@ def remove_passthrough_nodes(  # noqa: C901
 
 
 def find_all_io(connections):
-    """Build up a list of all inputs and outputs for each object"""
+    """Build up a list of all inputs and outputs for each object."""
     inputs = collections.defaultdict(list)
     outputs = collections.defaultdict(list)
     for c in connections:

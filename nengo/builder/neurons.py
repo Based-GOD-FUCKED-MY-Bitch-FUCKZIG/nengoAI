@@ -109,7 +109,6 @@ def build_neurons(model, neurontype, neurons):
     Does not modify ``model.params[]`` and can therefore be called
     more than once with the same `.NeuronType` instance.
     """
-
     model.add_op(
         SimNeurons(
             neurons=neurontype,
@@ -140,7 +139,6 @@ def build_spikingrectifiedlinear(model, spikingrectifiedlinear, neurons):
     Does not modify ``model.params[]`` and can therefore be called
     more than once with the same `.SpikingRectifiedLinear` instance.
     """
-
     model.sig[neurons]["voltage"] = Signal(
         shape=neurons.size_in, name="%s.voltage" % neurons
     )
@@ -175,7 +173,6 @@ def build_lif(model, lif, neurons):
     Does not modify ``model.params[]`` and can therefore be called
     more than once with the same `.LIF` instance.
     """
-
     model.sig[neurons]["voltage"] = Signal(
         shape=neurons.size_in, name="%s.voltage" % neurons
     )
@@ -216,7 +213,6 @@ def build_alifrate(model, alifrate, neurons):
     Does not modify ``model.params[]`` and can therefore be called
     more than once with the same `.AdaptiveLIFRate` instance.
     """
-
     model.sig[neurons]["adaptation"] = Signal(
         shape=neurons.size_in, name="%s.adaptation" % neurons
     )
@@ -252,7 +248,6 @@ def build_alif(model, alif, neurons):
     Does not modify ``model.params[]`` and can therefore be called
     more than once with the same `.AdaptiveLIF` instance.
     """
-
     model.sig[neurons]["voltage"] = Signal(
         shape=neurons.size_in, name="%s.voltage" % neurons
     )
@@ -297,7 +292,6 @@ def build_izhikevich(model, izhikevich, neurons):
     Does not modify ``model.params[]`` and can therefore be called
     more than once with the same `.Izhikevich` instance.
     """
-
     model.sig[neurons]["voltage"] = Signal(
         np.ones(neurons.size_in, dtype=rc.float_dtype) * izhikevich.reset_voltage,
         name="%s.voltage" % neurons,

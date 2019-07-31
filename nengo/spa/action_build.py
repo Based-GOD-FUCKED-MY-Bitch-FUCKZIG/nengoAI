@@ -22,7 +22,6 @@ def convolution(module, target_name, effect, n_neurons_cconv, synapse):
 
     Returns the created nengo.networks.CircularConvolution.
     """
-
     source1 = effect.source1
     source2 = effect.source2
 

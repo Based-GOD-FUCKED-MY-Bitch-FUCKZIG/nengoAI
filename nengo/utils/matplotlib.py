@@ -195,7 +195,6 @@ def plot_tuning_curves(ensemble, sim, connection=None, ax=None):
     If a connection is provided, the decoders will be used to set
     the colours of the tuning curves.
     """
-
     if ax is None:
         ax = plt.gca()
 

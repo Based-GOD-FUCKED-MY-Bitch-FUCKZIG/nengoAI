@@ -8,7 +8,7 @@ from nengo.networks.product import Product
 
 
 def circconv(a, b, invert_a=False, invert_b=False, axis=-1):
-    """A reference Numpy implementation of circular convolution"""
+    """A reference Numpy implementation of circular convolution."""
     A = np.fft.fft(a, axis=axis)
     B = np.fft.fft(b, axis=axis)
     if invert_a:
@@ -72,7 +72,7 @@ def transform_out(dims):
 
 
 def remove_imag_rows(tr):
-    """Throw away imaginary row we don't need (since they're zero)"""
+    """Throw away imaginary rows we do not need (they are zero)."""
     i = np.arange(tr.shape[0])
     if tr.shape[1] % 2 == 0:
         tr = tr[(i == 0) | (i > 3) & (i < len(i) - 3)]
@@ -137,7 +137,6 @@ class CircularConvolution(nengo.Network):
 
     Examples
     --------
-
     A basic example computing the circular convolution of two 10-dimensional
     vectors represented by ensemble arrays::
 
@@ -151,7 +150,6 @@ class CircularConvolution(nengo.Network):
 
     Notes
     -----
-
     The network maps the input vectors :math:`a` and :math:`b` of length N into
     the Fourier domain and aligns them for complex multiplication.
     Letting :math:`F = DFT(a)` and :math:`G = DFT(b)`, this is given by::

@@ -26,7 +26,6 @@ def build_node(model, node):
     -----
     Sets ``model.params[node]`` to ``None``.
     """
-
     # input signal
     if not is_array_like(node.output) and node.size_in > 0:
         sig_in = Signal(shape=node.size_in, name="%s.in" % node)

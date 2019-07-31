@@ -89,7 +89,6 @@ def build_probe(model, probe):
     Sets ``model.params[probe]`` to a list.
     `.Simulator` appends to that list when running a simulation.
     """
-
     # find the right parent class in `objtypes`, using `isinstance`
     for nengotype, probeables in probemap.items():
         if isinstance(probe.obj, nengotype):

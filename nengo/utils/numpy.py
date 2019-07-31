@@ -1,6 +1,5 @@
-"""
-Extra functions to extend the capabilities of Numpy.
-"""
+"""Extra functions to extend the capabilities of Numpy."""
+
 import collections
 import logging
 
@@ -169,7 +168,7 @@ def array_offset(x):
 
 
 def norm(x, axis=None, keepdims=False):
-    """Euclidean norm
+    """Compute the Euclidean norm.
 
     Parameters
     ----------
@@ -193,7 +192,7 @@ def meshgrid_nd(*args):
 
 
 def rms(x, axis=None, keepdims=False):
-    """Root-mean-square amplitude
+    """Compute the root-mean-square amplitude.
 
     Parameters
     ----------
@@ -209,7 +208,7 @@ def rms(x, axis=None, keepdims=False):
 
 
 def rmse(x, y, axis=None, keepdims=False):
-    """Root-mean-square error amplitude
+    """Compute the root-mean-square error.
 
     Equivalent to rms(x - y, axis=axis, keepdims=keepdims).
 

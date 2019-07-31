@@ -70,7 +70,6 @@ def piecewise(data):
 
     Examples
     --------
-
       >>> func = piecewise({0.5: 1, 0.75: -1, 1: 0})
       >>> func(0.2)
       [0]
@@ -93,7 +92,6 @@ def piecewise(data):
       [0.8775825618903728]
 
     """
-
     warnings.warn(
         "The `piecewise` function is deprecated. Use the Piecewise " "process instead.",
         DeprecationWarning,

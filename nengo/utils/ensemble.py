@@ -88,7 +88,6 @@ def response_curves(ens, sim, inputs=None):
     --------
     tuning_curves
     """
-
     if inputs is None:
         inputs = np.linspace(-1.0, 1.0)
     return inputs, ens.neuron_type.rates(inputs, sim.data[ens].gain, sim.data[ens].bias)
@@ -99,7 +98,6 @@ def _similarity(encoders, index, rows, cols=1):
 
     Parameters
     ----------
-
     encoders: ndarray
         The encoders.
     index: int
@@ -168,7 +166,6 @@ def sorted_neurons(ensemble, sim, iterations=100, seed=None):
     This algorithm is repeated `iterations` times, so a total of
     `iterations*N` swaps are considered.
     """
-
     # Normalize all the encoders
     encoders = np.array(sim.data[ensemble].encoders)
     encoders /= npext.norm(encoders, axis=1, keepdims=True)

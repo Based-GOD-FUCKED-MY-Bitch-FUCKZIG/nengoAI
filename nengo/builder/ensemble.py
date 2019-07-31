@@ -169,7 +169,6 @@ def build_ensemble(model, ens):
     -----
     Sets ``model.params[ens]`` to a `.BuiltEnsemble` instance.
     """
-
     # Create random number generator
     rng = np.random.RandomState(model.seeds[ens])
 

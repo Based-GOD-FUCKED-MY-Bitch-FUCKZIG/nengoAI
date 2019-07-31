@@ -176,7 +176,6 @@ class NeuronType(FrozenObject):
         intercepts : (n_neurons,) array_like
             X-intercepts of neurons.
         """
-
         max_rates = self.rates(1, gain, bias).squeeze(axis=0)
 
         x_range = np.linspace(-1, 1, 101)
@@ -332,7 +331,6 @@ class SpikingRectifiedLinear(RectifiedLinear):
 
     def rates(self, x, gain, bias):
         """Use RectifiedLinear to determine rates."""
-
         J = self.current(x, gain, bias)
         out = np.zeros_like(J)
         RectifiedLinear.step_math(self, dt=1.0, J=J, output=out)
@@ -340,7 +338,6 @@ class SpikingRectifiedLinear(RectifiedLinear):
 
     def step_math(self, dt, J, spiked, voltage):
         """Implement the integrate and fire nonlinearity."""
-
         voltage += np.maximum(J, 0) * dt
         n_spikes = np.floor(voltage)
         spiked[:] = self.amplitude * n_spikes / dt

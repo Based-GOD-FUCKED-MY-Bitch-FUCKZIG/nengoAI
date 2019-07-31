@@ -50,7 +50,6 @@ def optimize(model, dg, max_passes=None):
         Dict of the form ``{a: {b, c}}`` where ``b`` and ``c`` depend on ``a``,
         specifying the operator dependency graph of the model.
     """
-
     logger.info("Optimizing model...")
 
     # We try first to merge operators with views only as these have a fixed
@@ -154,7 +153,6 @@ class OpMergePass:
         only_merge_ops_with_view : bool
             Limits operator merges to operators with views.
         """
-
         # --- Initialize pass state
         self.dependents = transitive_closure(self.dg.forward)
         self.only_merge_ops_with_view = only_merge_ops_with_view
@@ -173,7 +171,6 @@ class OpMergePass:
         only_merge_ops_with_view : bool
             Limit merges to operators with views.
         """
-
         # We go through the ops grouped by type as only ops with the same
         # type can be merged.
         by_type = groupby(self.might_merge, type)
@@ -230,7 +227,6 @@ class OpMergePass:
             None if it is None for all) for their first signal in
             `all_signals`.
         """
-
         # Sort to have sequential memory.
         offsets = np.array(
             [self.opinfo[op].v_offset for op in subset], dtype=rc.float_dtype

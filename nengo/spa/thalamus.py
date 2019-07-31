@@ -175,7 +175,6 @@ class Thalamus(nengo.networks.Thalamus, Module):
         for inhibiting ensembles that should only be active when this
         action is active.
         """
-
         target_module = self.spa.get_module(target_name)
 
         if index not in self.gates:

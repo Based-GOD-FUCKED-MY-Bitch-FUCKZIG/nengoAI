@@ -503,7 +503,6 @@ def build_learning_rule(model, rule):
     -----
     Sets ``model.params[rule]`` to ``None``.
     """
-
     conn = rule.connection
 
     # --- Set up delta signal
@@ -551,7 +550,6 @@ def build_bcm(model, bcm, rule):
     Does not modify ``model.params[]`` and can therefore be called
     more than once with the same `.BCM` instance.
     """
-
     conn = rule.connection
     pre_activities = model.sig[get_pre_ens(conn).neurons]["out"]
     post_activities = model.sig[get_post_ens(conn).neurons]["out"]
@@ -596,7 +594,6 @@ def build_oja(model, oja, rule):
     Does not modify ``model.params[]`` and can therefore be called
     more than once with the same `.Oja` instance.
     """
-
     conn = rule.connection
     pre_activities = model.sig[get_pre_ens(conn).neurons]["out"]
     post_activities = model.sig[get_post_ens(conn).neurons]["out"]
@@ -640,7 +637,6 @@ def build_voja(model, voja, rule):
     Does not modify ``model.params[]`` and can therefore be called
     more than once with the same `.Voja` instance.
     """
-
     conn = rule.connection
 
     # Filtered post activity
@@ -700,7 +696,6 @@ def build_pes(model, pes, rule):
     Does not modify ``model.params[]`` and can therefore be called
     more than once with the same `.PES` instance.
     """
-
     conn = rule.connection
 
     # Create input error signal

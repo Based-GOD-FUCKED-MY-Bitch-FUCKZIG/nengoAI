@@ -116,7 +116,8 @@ class _LstsqNoiseSolver(Solver):
     solver = LeastSquaresSolverParam("solver")
 
     def __init__(self, weights=False, noise=0.1, solver=lstsq.Cholesky()):
-        """
+        """Create new solver.
+
         Parameters
         ----------
         weights : bool, optional
@@ -170,7 +171,8 @@ class _LstsqL2Solver(Solver):
     solver = LeastSquaresSolverParam("solver")
 
     def __init__(self, weights=False, reg=0.1, solver=lstsq.Cholesky()):
-        """
+        """Create new solver.
+
         Parameters
         ----------
         weights : bool, optional
@@ -317,7 +319,8 @@ class LstsqDrop(Solver):
         solver1=LstsqL2(reg=0.001),
         solver2=LstsqL2(reg=0.1),
     ):
-        """
+        """Create new solver.
+
         Parameters
         ----------
         weights : bool, optional
@@ -381,7 +384,8 @@ class Nnls(Solver):
     compositional = False
 
     def __init__(self, weights=False):
-        """
+        """Create new non-negative least-squares solver.
+
         .. note:: Requires
                   `SciPy <https://docs.scipy.org/doc/scipy/reference/>`_.
 
@@ -430,7 +434,8 @@ class NnlsL2(Nnls):
     reg = NumberParam("reg", low=0)
 
     def __init__(self, weights=False, reg=0.1):
-        """
+        """Create new NnlsL2 solver.
+
         .. note:: Requires
                   `SciPy <https://docs.scipy.org/doc/scipy/reference/>`_.
 

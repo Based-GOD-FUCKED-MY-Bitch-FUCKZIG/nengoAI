@@ -38,12 +38,12 @@ class Transform(FrozenObject):
 
     @property
     def size_in(self):
-        """Expected size of input to transform"""
+        """Expected size of input to transform."""
         raise NotImplementedError()
 
     @property
     def size_out(self):
-        """Expected size of output from transform"""
+        """Expected size of output from transform."""
         raise NotImplementedError()
 
 
@@ -214,7 +214,6 @@ class SparseMatrix(FrozenObject):
         data associated with signals are allocated. If this allocated
         data is to be modified, it should be copied first.
         """
-
         if self._allocated is not None:
             return self._allocated
 
@@ -259,7 +258,6 @@ class SparseMatrix(FrozenObject):
 
     def toarray(self):
         """Return the dense matrix equivalent of this matrix."""
-
         if self._dense is not None:
             return self._dense
 
