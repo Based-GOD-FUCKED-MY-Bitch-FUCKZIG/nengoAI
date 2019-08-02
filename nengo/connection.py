@@ -364,8 +364,7 @@ class Connection(NengoObject):
         Solver instance to compute decoders or weights
         (see `~nengo.solvers.Solver`). If ``solver.weights`` is True, a full
         connection weight matrix is computed instead of decoders.
-    learning_rule_type : LearningRuleType or iterable of LearningRuleType, \
-                         optional
+    learning_rule_type : LearningRuleType or iterable of LearningRuleType, optional
         Modifies the decoders or connection weights during simulation.
     eval_points : (n_eval_points, size_in) array_like or int, optional
         Points at which to evaluate ``function`` when computing decoders,
